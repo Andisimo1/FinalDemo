@@ -12,7 +12,7 @@ module "cluster" {
   aws_region          = var.aws_region
   aws_profile         = var.aws_profile
   remote_state_bucket = var.bucket_name
-  cidr_block          = "10.10.0.0/16"
+  cidr_block          = "10.0.0.0/16"
   aws_dns             = true
   env                 = var.env
   app                 = var.app
