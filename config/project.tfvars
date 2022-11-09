@@ -1,0 +1,9 @@
+environment = "project"
+app_name = "catsapp"
+aws_profile = "default"
+aws_account = "366915744137"
+aws_region = "eu-central-1"
+image_tag = "0.0.1"
+repo_url = "https://github.com/Andisimo1/testing.git"
+# git_trigger_event = "PUSH"
+app_count = 1
