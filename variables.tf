@@ -48,7 +48,7 @@ variable "github_oauth_token" {
 
 variable "repo_url" {
   type    = string
-  default = "https://github.com/Andisimo1/FinalDemo"
+  default = "https://github.com/Andisimo1/FinalDemo.git"
 }
 
 variable "branch_pattern" {
