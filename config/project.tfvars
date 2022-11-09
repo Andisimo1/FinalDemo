@@ -7,3 +7,4 @@ image_tag = "0.0.1"
 repo_url = "https://github.com/Andisimo1/FinalDemo.git"
 git_trigger_event = "PUSH"
 app_count = 1
+branch_pattern = "^refs/heads/main$"
