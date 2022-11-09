@@ -7,10 +7,10 @@ terraform {
     }
 
 
-#     backend "s3" {
-#         encrypt = true
-#         bucket  = "eu-central-bucket-1"
-#         region  = "eu-central-1"
-#         key     = "state"
-#     }
+    backend "s3" {
+        encrypt = true
+        bucket  = "eu-central-bucket-1"
+        region  = "eu-central-1"
+        key     = "state"
+    }
 }
