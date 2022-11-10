@@ -12,7 +12,7 @@ module "cluster" {
   aws_region          = var.aws_region
   aws_profile         = var.aws_profile
   remote_state_bucket = var.bucket_name
-  cidr_block_vpc      = "10.0.0.0/16"
+  cidr_block_vpc      = "10.0.0.0/16" 
   aws_dns             = true
   env                 = var.env
   app                 = var.app
@@ -28,8 +28,6 @@ module "cluster" {
   web_server_fargate_cpu    = 256
   web_server_fargate_memory = 512
 }
-
-
 
 module "ecr" {
   source              = "./modules/ecr"

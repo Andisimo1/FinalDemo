@@ -1,10 +1,10 @@
 environment = "project"
-app_name = "catsapp"
+app_name = "app"
 aws_profile = "default"
 aws_account = "366915744137"
 aws_region = "eu-central-1"
 image_tag = "0.0.1"
-repo_url = "https://github.com/Andisimo1/FinalDemo.git"
+repo_url = "https://github.com/Andisimo1/final.git"
 git_trigger_event = "PUSH"
 app_count = 1
 branch_pattern = "^refs/heads/main$"
