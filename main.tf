@@ -25,8 +25,8 @@ module "cluster" {
   ecr_repository_url        = module.ecr.aws_ecr_repository_url
   taskdef_template          = "${path.root}/modules/cluster/cb_app.json.tpl"
   web_server_count          = 3
-  web_server_fargate_cpu    = 4
-  web_server_fargate_memory = 512
+  web_server_fargate_cpu    = 1024
+  web_server_fargate_memory = 2048
 
   depends_on = [
     module.ecr, module.init-build
