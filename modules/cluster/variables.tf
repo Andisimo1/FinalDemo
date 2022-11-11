@@ -72,12 +72,12 @@ variable "web_server_count" {
 
 variable "web_server_fargate_cpu" {
   description = "Fargate instance CPU units to provision for web server (1 vCPU = 1024 CPU units)"
-  default     = 4
+  default     = 1024
 }
 
 variable "web_server_fargate_memory" {
   description = "Fargate instance memory to provision for web server (in MiB)"
-  default     = 512
+  default     = 2048
 }
 
 variable "ecr_repository_url" {
