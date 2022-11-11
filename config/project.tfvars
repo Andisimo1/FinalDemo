@@ -1,5 +1,6 @@
-environment = "project"
+env = "project"
 app_name = "app"
+name_container = "catsapp"
 aws_profile = "default"
 aws_account = "366915744137"
 aws_region = "eu-central-1"
