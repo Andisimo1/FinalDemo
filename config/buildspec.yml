@@ -6,7 +6,7 @@ env:
     REPOSITORY_REGION: "eu-central-1"
     ENV: "project"
     APP_NAME: "app"
-    NAME_CONTAINER: "catsapp"
+    NAME_CONTAINER: catsapp
     TERRAFORM_VERSION: "1.3.3"
 
 phases:
@@ -33,7 +33,7 @@ phases:
 
       - cd ${CODEBUILD_SRC_DIR}
       - terraform init
-      - terraform plan -target=module.network --var-file="./config/${ENV}.tfvars" -var="image_tag=${TAG}" -no-color -input=false -out plan.out
+      - terraform plan -target=module.cluster --var-file="./config/${ENV}.tfvars" -var="image_tag=${TAG}" -no-color -input=false -out plan.out
       - terraform apply -auto-approve -no-color -input=false plan.out
 
   post_build:
