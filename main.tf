@@ -24,9 +24,13 @@ module "cluster" {
   image_tag                 = var.image_tag
   ecr_repository_url        = module.ecr.aws_ecr_repository_url
   taskdef_template          = "${path.root}/modules/cluster/cb_app.json.tpl"
-  web_server_count          = 1
-  web_server_fargate_cpu    = 256
+  web_server_count          = 3
+  web_server_fargate_cpu    = 4
   web_server_fargate_memory = 512
+
+  depends_on = [
+    module.ecr, module.init-build
+  ]
 }
 
 module "ecr" {
@@ -50,6 +54,10 @@ module "init-build" {
   app                 = var.app
   working_dir         = "${path.root}/app"
   image_tag           = var.image_tag
+
+  depends_on = [
+    module.ecr
+  ]
 }
 
 module "codebuild" {
@@ -66,4 +74,8 @@ module "codebuild" {
   branch_pattern      = var.branch_pattern
   git_trigger_event   = var.git_trigger_event
   build_spec_file     = "config/buildspec.yml"
+
+  depends_on = [
+    module.cluster, module.ecr
+  ]
 }
