@@ -4,12 +4,12 @@ data "aws_region" "current" {}
 #General Variables
 variable "env" {
   description = "The environment of the project"
-  default     = "test"
+  default     = "project"
 }
 
 variable "app" {
   description = "The app of the project"
-  default     = "my_app"
+  default     = "app"
 }
 
 variable "aws_profile" {
@@ -46,7 +46,7 @@ locals {
 
 variable "name_container" {
   description = "The container name"
-  default     = "nginx"
+  default     = "catsapp"
 }
 
 #Variables for ECS
@@ -62,7 +62,7 @@ variable "ecs_task_role_name" {
 
 variable "web_server_image" {
   description = "The web server image to run in the ECS cluster"
-  default     = "089370973671.dkr.ecr.eu-central-1.amazonaws.com/my_app-test-nginx"
+  default     = "366915744137.dkr.ecr.eu-central-1.amazonaws.com/app-project-catsapp"
 }
 
 variable "web_server_count" {
