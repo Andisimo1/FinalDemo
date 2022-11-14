@@ -1,1 +1,9 @@
 config/secrets.tfvars
+.terraform.lock.hcl
+.terraform/terraform.tfstate
+.terraform/modules/modules.json
+.terraform/providers/registry.terraform.io/hashicorp/aws/3.75.2/linux_amd64/terraform-provider-aws_v3.75.2_x5
+.gitignore
+.terraform/providers/registry.terraform.io/hashicorp/null/3.2.0/linux_amd64/terraform-provider-null_v3.2.0_x5
+.gitignore
+.terraform/providers/registry.terraform.io/hashicorp/template/2.2.0/linux_amd64/terraform-provider-template_v2.2.0_x4
