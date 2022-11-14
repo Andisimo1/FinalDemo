@@ -20,26 +20,15 @@ resource "aws_security_group" "codebuild_sg" {
   }
 }
 
-resource "null_resource" "import_source_credentials" {
-
-
-  triggers = {
-    github_oauth_token = var.github_oauth_token
-  }
-
-  provisioner "local-exec" {
-    command = <<EOF
-      aws --region ${data.aws_region.current.name} codebuild import-source-credentials \
-                                                             --token ${var.github_oauth_token} \
-                                                             --server-type GITHUB \
-                                                             --auth-type PERSONAL_ACCESS_TOKEN
-EOF
-  }
+resource "aws_codebuild_source_credential" "github" {
+  auth_type = "PERSONAL_ACCESS_TOKEN"
+  server_type = "GITHUB"
+  token = var.github_oauth_token
 }
 
 # CodeBuild Project
 resource "aws_codebuild_project" "project" {
-  depends_on    = [null_resource.import_source_credentials]
+  depends_on    = [aws_codebuild_source_credential.github]
   name          = local.codebuild_project_name
   description   = local.description
   build_timeout = "120"
