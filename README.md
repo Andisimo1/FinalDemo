@@ -28,7 +28,7 @@ The repo contains:
 - / - root Terraform module
   - ./config - configuration directory
     - project.tfvars - Contains variable values for development environment (git branch "main")
-    - secret.tfvars - Contains secrets (Github token) for Github repository (not presented in the repo)
+    - secrets.tfvars - Contains secrets (Github token) for Github repository (not presented in the repo)
     - buildspec.yml - Build SPEC for AWS Codebuild
   - backend.tf - Terraform configuration
   - variables.tf - Terraform variables
