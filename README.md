@@ -46,7 +46,7 @@ The repo contains the next components:
 ### Preparation
 - Create an account on AWS 
 - Create an user with required permissions using AWS IAM
-- Install Terraform, AWS CLI, and Docker
+- Install Terraform, AWS CLI and Docker
 - Download the repo content
 - Create Github token
 - Create secret.tfvars and add next content "github_oauth_token = YOUR GITHUB TOKEN"
