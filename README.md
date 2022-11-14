@@ -68,13 +68,8 @@ terraform apply -target=module.s3_terraform_state --var-file=./config/project.tf
 
 - Uncomment backend "s3" in ./terraform/backend.tf file
 
-- Go to ./terraform directory and run (use your ./terraform/config/secrets.tfvars):
-
 terraform init  
-terraform apply -target=module.elastic_container_registry --var-file=./config/project.tfvars  
-terraform apply -target=module.initial_build --var-file=./config/project.tfvars  
-terraform apply -target=module.ecs_cluster --var-file=./config/project.tfvars  
-terraform apply -target=module.codebuild --var-file=./config/project.tfvars --var-file=./config/secrets.tfvars  
+terraform apply --var-file=./config/project.tfvars --auto-approve 
 
 - Check results
   - Go to your AWS account and check created infrastructure resources 
