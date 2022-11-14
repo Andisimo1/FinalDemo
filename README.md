@@ -23,7 +23,6 @@ The repo contains the next components:
 ## Folders and Files
 - /presentation - presentation of the project
 - /app - application directory
-  - ./web - web application content directory
   - Dockerfile - special file, containing script of instructions, to build Docker image
   - Makefile -  special file, containing shell commands, to build and push Docker image to ECR repository
 - / - root Terraform module
@@ -47,9 +46,9 @@ The repo contains the next components:
 ### Preparation
 - Create an account on AWS 
 - Create an user with required permissions using AWS IAM
-- Install the required version of Terraform, AWS CLI, and Docker
+- Install Terraform, AWS CLI, and Docker
 - Download the repo content
-- Obtain Github token
+- Create Github token
 - Create secret.tfvars and add next content "github_oauth_token = YOUR GITHUB TOKEN"
 - Change variable values in *.tfvars
 
@@ -62,20 +61,20 @@ aws_access_key_id = YOUR AWS ACCESS KEY ID
 aws_secret_access_key = YOUR AWS SECRET ACCESS KEY  
 
 #### Steps
-- Comment backend "s3" for "dev" and "prod" in ./terraform/terraform.tf file
+- Comment backend "s3" in ./terraform/backend.tf file
 
 terraform init  
-terraform apply -target=module.s3_terraform_state --var-file=./config/dev.tfvars  
+terraform apply -target=module.s3_terraform_state --var-file=./config/project.tfvars  
 
-- Uncomment backend "s3" for "dev" in ./terraform/terraform.tf file
+- Uncomment backend "s3" in ./terraform/backend.tf file
 
-- Go to ./terraform directory and run (use your ./terraform/config/secret.tfvars):
+- Go to ./terraform directory and run (use your ./terraform/config/secrets.tfvars):
 
 terraform init  
-terraform apply -target=module.elastic_container_registry --var-file=./config/dev.tfvars  
-terraform apply -target=module.initial_build --var-file=./config/dev.tfvars  
-terraform apply -target=module.ecs_cluster --var-file=./config/dev.tfvars  
-terraform apply -target=module.codebuild --var-file=./config/dev.tfvars --var-file=./config/secret.tfvars  
+terraform apply -target=module.elastic_container_registry --var-file=./config/project.tfvars  
+terraform apply -target=module.initial_build --var-file=./config/project.tfvars  
+terraform apply -target=module.ecs_cluster --var-file=./config/project.tfvars  
+terraform apply -target=module.codebuild --var-file=./config/project.tfvars --var-file=./config/secrets.tfvars  
 
 - Check results
   - Go to your AWS account and check created infrastructure resources 
