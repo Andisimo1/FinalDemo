@@ -7,9 +7,9 @@ This page describes how to deploy a web application in Docker container on AWS u
 - Docker
 
 ## Description
-This solution was created to demonstrate how deploying a web application in Docker container by creating a cloud infrastructure on AWS based on "Infrastructure as a code" using Terraform looks like. It consists of a web application, Terraform modules, root Terraform module and configuration files to create infrastructure.
+This solution was created to demonstrate the deployment of a web application in a Docker container. It was built using Terraform by an AWS cloud infrastructure based on "Infrastructure as a Code." It contains a web application, Terraform modules, root Terraform modules, and configuration files to create an infrastructure.
 
-The repo contains the next components:
+The repo contains:
 * Terraform project
   * Web application
   * Root Terraform module
