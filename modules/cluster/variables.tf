@@ -60,10 +60,10 @@ variable "ecs_task_role_name" {
   default     = "TaskRole"
 }
 
-variable "web_server_image" {
-  description = "The web server image to run in the ECS cluster"
-  default     = "366915744137.dkr.ecr.eu-central-1.amazonaws.com/app-project-catsapp"
-}
+# variable "web_server_image" {
+#   description = "The web server image to run in the ECS cluster"
+#   default     = "366915744137.dkr.ecr.eu-central-1.amazonaws.com/app-project-catsapp"
+# }
 
 variable "web_server_count" {
   description = "Number of web server containers to run"

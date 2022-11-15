@@ -31,9 +31,9 @@ variable "name_container" {
   default = "catsapp"
 }
 
-variable "web_server_image" {
-  default = "366915744137.dkr.ecr.eu-central-1.amazonaws.com/app-project-catsapp"
-}
+# variable "web_server_image" {
+#   default = "366915744137.dkr.ecr.eu-central-1.amazonaws.com/app-project-catsapp"
+# }
 
 variable "image_tag" {
   type    = string

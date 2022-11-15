@@ -20,7 +20,7 @@ module "cluster" {
   app_target_port     = 80
   health_check_path   = "/"
   name_container      = var.name_container
-  web_server_image          = var.web_server_image
+  # web_server_image          = var.web_server_image
   image_tag                 = var.image_tag
   ecr_repository_url        = module.ecr.aws_ecr_repository_url
   taskdef_template          = "${path.root}/modules/cluster/cb_app.json.tpl"
@@ -41,7 +41,7 @@ module "ecr" {
   env                 = var.env
   app                 = var.app
   name_container      = var.name_container
-  web_server_image    = var.web_server_image
+  # web_server_image    = var.web_server_image
 
 }
 
